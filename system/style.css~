@@ -269,15 +269,6 @@ span {
 	background: rgba(191,191,191,0.1);
 }
 
-.ui-search-icon {
-    background-image: url("search.png");
-    background-repeat: no-repeat;
-    background-position:center;
-    width: 24px;
-    height: 24px;
-    float: right;
-}
-
 .ui-expandable-icon {
     background-image: url("go-next.png");
     background-repeat: no-repeat;

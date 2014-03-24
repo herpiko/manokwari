@@ -91,7 +91,7 @@ function searchValue() {
 <div data-role="listview" id="listGeneral1" data-inset="true">
 		<!--div data-role="header"><span>Places and System</span></div-->
 
-		<a href="#locations" data-transition="slide" id="btn-locations" onclick="searchValue()"><span>Search & Places</span><div class="ui-search-icon"></div></a>
+		<a href="#locations" data-transition="slide" id="btn-locations" onclick="searchValue()"><span>Search</span><div class="ui-search-icon"></div></a>
 
 	</div>
 		
