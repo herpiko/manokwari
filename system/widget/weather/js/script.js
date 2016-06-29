@@ -1,11 +1,13 @@
+var apiKey = "1a9c56c7cf5f6910780a6880ccae4b05";
+
 function getZipCode(location, callback) {
 	//If it's a cityid, we bypass the first step
 	if ($.isNumeric(location)) {
 		cityid_request(location, callback)
 	//If they use a normal location
 	} else {
-    var currentWeatherUri = "http://api.openweathermap.org/data/2.5/weather"
-		$.get(currentWeatherUri + "?q=" + encodeURIComponent(location) + "&units=metric", function(locationData) {
+    var currentWeatherUri = "http://api.openweathermap.org/data/2.5/weather?APPID=" + apiKey;
+		$.get(currentWeatherUri + "&q=" + encodeURIComponent(location) + "&units=metric", function(locationData) {
 			// Gets the cityId && Caches Location Name
 			localStorage.tekukur_location = $(locationData).children().filterNode("name").text()//locationData.name 
 			if (locationData.id) {
@@ -20,7 +22,7 @@ function getZipCode(location, callback) {
 function getWeatherData(currentData, callback) {
   if (typeof currentData == 'string')
     currentData = JSON.parse(currentData)
-  var weatherForecastUri = "http://api.openweathermap.org/data/2.5/forecast/daily"
+  var weatherForecastUri = "http://api.openweathermap.org/data/2.5/forecast/daily?APPID=" + apiKey;
 	$.ajax({
 		url: weatherForecastUri + "?id=" + currentData.id,
 		success: function(data) {
